@@ -1,11 +1,11 @@
-**🚀 GhostFollow AI
-Autonomous Web Agent for Discovering Opportunities & Generating Intelligent Follow-Ups
+**🚀 GhostFollow AI**
+**Autonomous Web Agent for Discovering Opportunities & Generating Intelligent Follow-Ups
 
 GhostFollow AI is an autonomous web agent powered by TinyFish that actively navigates the internet, identifies founders asking for help, understands their problems, and generates personalized outreach messages automatically.
 
 Instead of manually searching forums and discussions for opportunities, GhostFollow AI turns real conversations on the web into actionable business insights.
 
-🌍 The Problem
+**🌍 The Problem**
 
 Every day thousands of founders, developers, and businesses discuss their problems online on platforms like:
 
@@ -35,7 +35,7 @@ As a result, many valuable opportunities are missed.
 
 The web contains massive amounts of intent data, but it is still designed primarily for humans rather than autonomous software agents.
 
-🎯 Our Solution
+**🎯 Our Solution**
 
 GhostFollow AI introduces an agentic web automation system capable of performing real tasks across the internet.
 
@@ -57,11 +57,11 @@ Instead of humans manually searching for leads, the agent actively discovers the
 
 GhostFollow AI follows a multi-step autonomous workflow.
 
-1️⃣ Web Navigation
+**1️⃣ Web Navigation**
 
 The TinyFish web agent navigates public platforms such as Hacker News and searches for discussions where founders ask for help with tools or solutions.
-
-2️⃣ Discussion Discovery
+**
+**2️⃣ Discussion Discovery**
 
 The agent identifies posts containing intent signals such as:
 
@@ -73,7 +73,7 @@ sales or lead generation challenges
 
 product development questions
 
-3️⃣ Context Analysis
+**3️⃣ Context Analysis**
 
 The agent reads the discussion thread and extracts:
 
@@ -85,7 +85,7 @@ the problem described
 
 keywords indicating solution needs
 
-4️⃣ Opportunity Identification
+**4️⃣ Opportunity Identification**
 
 Relevant discussions are classified as potential opportunities.
 
@@ -93,7 +93,7 @@ Relevant discussions are classified as potential opportunities.
 
 Using AI reasoning, GhostFollow AI generates a personalized outreach message tailored to the founder’s needs.
 
-🧠 Example Output
+**🧠 Example Output**
 
 Founder: Artur
 Discussion: AI-powered PM tools for SaaS founders
@@ -121,7 +121,7 @@ AI Reasoning Engine
           │ Message Generation
           ▼
 Opportunity Insights
-🖥️ Product Interface
+**🖥️ Product Interface**
 
 GhostFollow AI includes a SaaS-style dashboard that enables teams to monitor and manage opportunities discovered by the agent.
 
@@ -141,7 +141,7 @@ Analytics – insights from detected conversations
 
 Integrations – platform connectivity
 
-🔍 Real Challenges We Solved
+**🔍 Real Challenges We Solved**
 
 Building GhostFollow AI required addressing several real-world challenges.
 
@@ -161,7 +161,7 @@ Multi-Step Agent Orchestration
 
 Coordinating navigation, extraction, reasoning, and outreach generation required designing a robust agentic workflow.
 
-🧰 Built With
+**🧰 Built With**
 
 TinyFish Web Agent Infrastructure
 Autonomous web navigation and multi-step workflow execution.
@@ -177,7 +177,7 @@ Multi-step reasoning and automation.
 
 Web Data Extraction Techniques
 
-🚀 Future Improvements
+**🚀 Future Improvements**
 
 GhostFollow AI can evolve into a full autonomous opportunity intelligence platform.
 
@@ -195,7 +195,7 @@ automated outreach campaigns
 
 lead scoring based on conversation intent
 
-🌟 Why This Matters
+**🌟 Why This Matters**
 
 GhostFollow AI demonstrates the power of agentic web infrastructure.
 
@@ -213,7 +213,7 @@ This represents a major step toward AI systems that actively work on the web rat
 
 👨‍💻 Author
 
-Mohammed Noufal**
+**Mohammed Noufal**
 
 
 ****RUN**********
