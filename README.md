@@ -1,4 +1,4 @@
-🚀 GhostFollow AI
+**🚀 GhostFollow AI
 Autonomous Web Agent for Discovering Opportunities & Generating Intelligent Follow-Ups
 
 GhostFollow AI is an autonomous web agent powered by TinyFish that actively navigates the internet, identifies founders asking for help, understands their problems, and generates personalized outreach messages automatically.
@@ -213,4 +213,15 @@ This represents a major step toward AI systems that actively work on the web rat
 
 👨‍💻 Author
 
-Mohammed Noufal
+Mohammed Noufal**
+
+
+****RUN**********
+cd frontend 
+npm install 
+npm run dev
+
+then>>>>
+ cd backend
+ npm install 
+ npm run dev
