@@ -1,224 +1,216 @@
-# GhostFollow AI - Autonomous Customer Follow-Up Agent
+🚀 GhostFollow AI
+Autonomous Web Agent for Discovering Opportunities & Generating Intelligent Follow-Ups
 
-GhostFollow AI is a hackathon-ready MVP for the TinyFish Web Agent Hackathon. It identifies ghosted customer conversations, generates intelligent follow-up messages using LLMs, and can deliver them through real Gmail Web automation using Playwright.
+GhostFollow AI is an autonomous web agent powered by TinyFish that actively navigates the internet, identifies founders asking for help, understands their problems, and generates personalized outreach messages automatically.
 
-## What This MVP Demonstrates
+Instead of manually searching forums and discussions for opportunities, GhostFollow AI turns real conversations on the web into actionable business insights.
 
-- AI-powered ghosted conversation detection (48h inactivity default)
-- Context-aware follow-up generation (OpenAI, Amazon Nova, or fallback template)
-- Real browser automation agent that interacts with Gmail Web UI
-- Modern startup-style dashboard built with Next.js + TailwindCSS
-- AI thinking panel showing autonomous reasoning steps
-- Demo mode for reliable live presentations
+🌍 The Problem
 
-## Project Structure
+Every day thousands of founders, developers, and businesses discuss their problems online on platforms like:
 
-```text
-ghostfollow-ai/
-  frontend/
-    components/
-    pages/
-    dashboard/
-    styles/
-  backend/
-    main.py
-    agent.py
-    followup_generator.py
-    conversation_detector.py
-    database.py
-    prompts/
-    schemas/
-  automation/
-    gmail_agent.py
-  README.md
-```
+Hacker News
 
-## Tech Stack
+developer forums
 
-- Frontend: Next.js, React, TailwindCSS
-- Backend: FastAPI, SQLAlchemy
-- DB: PostgreSQL / Supabase compatible schema
-- Agent Automation: Playwright (Python)
-- LLM: OpenAI or Amazon Nova (Bedrock), with fallback template mode
+startup communities
 
-## Core Features Included
+product discussion boards
 
-1. Dashboard
-- Overview stats cards (total, ghosted, sent, queue)
-- Ghosted conversations table
-- Follow-up action buttons (generate + send)
-- Follow-up status log
-- AI reasoning panel
-- Agent activity feed
+Many of these discussions contain clear signals of demand, where founders are actively asking for help with tools, marketing, automation, or infrastructure.
 
-2. Conversation Detection
-- `/scan-conversations` checks inactivity threshold (default 48h)
-- Marks rows as `ghosted_status=true`
+However, discovering these opportunities is extremely difficult because it requires:
 
-3. AI Follow-Up Generator
-- `/generate-followup` creates contextual follow-ups from thread context
-- Returns reasoning trace for demo explainability
+constantly monitoring multiple websites
 
-4. Web Automation Agent
-- Playwright Gmail flow:
-  - open Gmail
-  - search/open thread
-  - click reply
-  - insert follow-up
-  - send message
+reading long discussions
 
-5. Backend API
-- `POST /scan-conversations`
-- `POST /generate-followup`
-- `POST /send-followup`
-- `GET /conversations`
-- `GET /followups`
-- `GET /activity`
+understanding the context of each conversation
 
-6. Demo Mode
-- `DEMO_MODE=true` seeds sample conversations and simulates sends
+writing personalized outreach messages
 
-## Local Setup
+This process is manual, time-consuming, and inefficient.
 
-## 1) Backend
+As a result, many valuable opportunities are missed.
 
-```bash
-cd ghostfollow-ai
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r backend/requirements.txt
-playwright install chromium
-```
+The web contains massive amounts of intent data, but it is still designed primarily for humans rather than autonomous software agents.
 
-Create env file from `backend/.env.example` and set values.
+🎯 Our Solution
 
-Run API:
+GhostFollow AI introduces an agentic web automation system capable of performing real tasks across the internet.
 
-```bash
-uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
-```
+The platform deploys an autonomous agent that can:
 
-## 2) Frontend
+navigate real websites
 
-```bash
-cd ghostfollow-ai/frontend
-npm install
-npm run dev
-```
+discover founder discussions
 
-Open: `http://localhost:3000/dashboard`
+analyze conversation context
 
-## 3) Optional PostgreSQL via Docker
+identify potential opportunities
 
-```bash
-cd ghostfollow-ai
-docker compose up -d
-```
+generate personalized outreach messages
 
-Use:
+Instead of humans manually searching for leads, the agent actively discovers them across the web.
 
-```env
-DATABASE_URL=postgresql://postgres:postgres@localhost:5432/ghostfollow
-```
+⚙️ How It Works
 
-## Gmail Automation (Real Web Interaction)
+GhostFollow AI follows a multi-step autonomous workflow.
 
-1. Save Gmail auth session once:
+1️⃣ Web Navigation
 
-```bash
-python automation/save_gmail_session.py
-```
+The TinyFish web agent navigates public platforms such as Hacker News and searches for discussions where founders ask for help with tools or solutions.
 
-2. Set env:
+2️⃣ Discussion Discovery
 
-```env
-DEMO_MODE=false
-GMAIL_STORAGE_STATE=storage_state.json
-PLAYWRIGHT_HEADLESS=false
-```
+The agent identifies posts containing intent signals such as:
 
-3. Use `POST /send-followup` from the dashboard or API.
+requests for AI tools
 
-Note: Gmail selectors can change over time. This MVP uses robust selectors and is intended for hackathon demonstration.
+marketing automation needs
 
-## API Payload Examples
+sales or lead generation challenges
 
-### `POST /scan-conversations`
+product development questions
 
-```json
-{
-  "threshold_hours": 48
-}
-```
+3️⃣ Context Analysis
 
-### `POST /generate-followup`
+The agent reads the discussion thread and extracts:
 
-```json
-{
-  "conversation_id": 1
-}
-```
+founder username
 
-### `POST /send-followup`
+discussion title
 
-```json
-{
-  "conversation_id": 1,
-  "dry_run": false
-}
-```
+the problem described
 
-## Database Schema
+keywords indicating solution needs
 
-SQL schema is provided at:
+4️⃣ Opportunity Identification
 
-- `backend/schemas/schema.sql`
+Relevant discussions are classified as potential opportunities.
 
-Tables:
-- `conversations`
-- `followups`
-- `activity_logs`
+5️⃣ Intelligent Outreach Generation
 
-## Prompt Assets
+Using AI reasoning, GhostFollow AI generates a personalized outreach message tailored to the founder’s needs.
 
-- Main prompt: `backend/prompts/followup_prompt.txt`
-- Examples: `backend/prompts/example_prompts.md`
+🧠 Example Output
 
-## Deployment
+Founder: Artur
+Discussion: AI-powered PM tools for SaaS founders
+Problem: Needs strategy and marketing automation support
 
-## Frontend to Vercel
+Generated Outreach:
 
-- Set root to `frontend/`
-- Build command: `npm run build`
-- Install command: `npm install`
-- Env var: `NEXT_PUBLIC_API_BASE=https://<your-backend-url>`
+Hi Artur, I came across your Hacker News post about AI-powered project management tools for SaaS teams. It sounds like you're looking for more than just task tracking and need support with strategy and outbound marketing workflows. I'm currently building an AI automation tool designed to streamline these processes. I'd love to hear more about your use case and see if it could help you move faster. Would you be open to a quick chat?
 
-## Backend to Render / Railway
+🏗️ System Architecture
+GhostFollow AI Dashboard (Base44)
+          │
+          │ User Interaction
+          ▼
+TinyFish Web Agent
+          │
+          │ Autonomous Web Navigation
+          ▼
+Online Communities (Hacker News)
+          │
+          │ Context Extraction
+          ▼
+AI Reasoning Engine
+          │
+          │ Message Generation
+          ▼
+Opportunity Insights
+🖥️ Product Interface
 
-- Use `backend/` as Python service source
-- Install dependencies from `backend/requirements.txt`
-- Start command:
+GhostFollow AI includes a SaaS-style dashboard that enables teams to monitor and manage opportunities discovered by the agent.
 
-```bash
-uvicorn backend.main:app --host 0.0.0.0 --port $PORT
-```
+The interface includes:
 
-- Add env vars:
-  - `DATABASE_URL`
-  - `DEMO_MODE`
-  - `OPENAI_API_KEY` (optional)
-  - `USE_AMAZON_NOVA`, `AWS_REGION` (optional)
-  - `GMAIL_STORAGE_STATE`, `PLAYWRIGHT_HEADLESS`
+Dashboard – overview of detected opportunities
 
-## Hackathon Demo Script
+Conversations – extracted founder discussions
 
-1. Open dashboard and run Scan Conversations.
-2. Show ghosted conversations detected in table.
-3. Click AI Follow-up and display AI Thinking Panel steps.
-4. Click Send via Gmail.
-5. Show activity logs and follow-up success status updates.
+Pipeline – opportunity tracking
 
-## Notes
+Agent Activity – real-time agent workflow logs
 
-- This MVP is modular and easy to extend to other channels (LinkedIn, WhatsApp Web, CRM inboxes).
-- For production hardening, add OAuth account linking, retries, queueing (Celery/Redis), and strict observability.
+Automation – configurable follow-up workflows
+
+Analytics – insights from detected conversations
+
+Integrations – platform connectivity
+
+🔍 Real Challenges We Solved
+
+Building GhostFollow AI required addressing several real-world challenges.
+
+Web Navigation Complexity
+
+Modern websites use dynamic layouts and constantly changing structures, which makes autonomous navigation difficult.
+
+Context Understanding
+
+Online discussions contain informal language and incomplete context, requiring advanced reasoning to detect real intent.
+
+Signal vs Noise
+
+Not every conversation represents an opportunity. The system must identify genuine needs while ignoring irrelevant discussions.
+
+Multi-Step Agent Orchestration
+
+Coordinating navigation, extraction, reasoning, and outreach generation required designing a robust agentic workflow.
+
+🧰 Built With
+
+TinyFish Web Agent Infrastructure
+Autonomous web navigation and multi-step workflow execution.
+
+Base44
+SaaS-style dashboard and product interface.
+
+AI Language Models
+Context analysis and outreach generation.
+
+Agentic Workflow Design
+Multi-step reasoning and automation.
+
+Web Data Extraction Techniques
+
+🚀 Future Improvements
+
+GhostFollow AI can evolve into a full autonomous opportunity intelligence platform.
+
+Potential extensions include:
+
+monitoring multiple online communities simultaneously
+
+real-time discussion detection
+
+automatic follow-up scheduling
+
+CRM integrations
+
+automated outreach campaigns
+
+lead scoring based on conversation intent
+
+🌟 Why This Matters
+
+GhostFollow AI demonstrates the power of agentic web infrastructure.
+
+Instead of passively responding to prompts, AI agents can now:
+
+navigate real websites
+
+understand conversations
+
+extract meaningful insights
+
+take autonomous action
+
+This represents a major step toward AI systems that actively work on the web rather than simply generating text.
+
+👨‍💻 Author
+
+Mohammed Noufal
